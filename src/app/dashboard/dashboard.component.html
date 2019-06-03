@@ -1,7 +1,15 @@
-<h1>Create an Eventbrite Flyer</h1>
-<h3>All Events</h3>
-<ul>
-  <li *ngFor="let event of (request$ | async)?.events">
-    {{event.start.utc | date }} - {{event.name.text}} <a [routerLink]="'/event/'+event.id" >View flyer</a>
-  </li>
-</ul>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-12">
+      <h1>Create an Eventbrite Flyer</h1>
+      <p>Makes a request to eventbrite.com getting all the events for a specific organizerId. Then displays those events in a list, allowing the user to select an event that is a print friendly flyer.</p>
+      <h3 class="mt-3">All Events</h3>
+      <ul>
+        <li *ngFor="let event of (request$ | async)?.events">
+          {{ event.start.utc | date }} - {{ event.name.text }}
+          <a [routerLink]="'/event/' + event.id">View flyer</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

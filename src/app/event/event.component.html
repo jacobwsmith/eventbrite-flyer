@@ -1,29 +1,14 @@
-<div *ngIf="detailedRequest" class="container mt-5">
-  <!-- <div class="flex-container">
-    <div class="flex-item">
-      <p>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada
-        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
-        egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
-        leo.
-      </p>
-    </div>
-    <div class="flex-item">
-      Aside 2
-    </div>
-  </div> -->
-
+<div *ngIf="detailedRequest" class="container m-5">
   <div class="row">
     <div class="col-8">
       <img class="image" src="{{ detailedRequest.logo.original.url }}" />
     </div>
     <div class="col-4">
       <!-- title -->
-      <p class="red bold">{{ detailedRequest.name.text }}</p>
+      <h3 class="red">{{ detailedRequest.name.text }}</h3>
 
       <!-- When -->
-      <p class="bold">
+      <p class="lead mt-3">
         {{ detailedRequest.start.utc | date: "EEEE MMMM dd, yyyy" }}
         <br />
         {{ detailedRequest.start.utc | date: "h:mm" }} -
@@ -35,14 +20,14 @@
       </p>
 
       <!-- Where -->
-      <p class="bold">
+      <p class="lead">
         {{ detailedRequest.venue.name }}
-        <br />
+        <br>
         {{ detailedRequest.venue.address.localized_address_display }}
       </p>
 
       <!-- Callout -->
-      <p class="red bold">Register on Eventbrite!</p>
+      <p class="lead red bold">Register on Eventbrite!</p>
     </div>
     <div class="row mt-5">
       <div class="col-12">
@@ -50,17 +35,17 @@
         <!-- <p>{{detailedRequest.description.text}}</p> -->
 
         <!-- About the event -->
-        <div [innerHTML]="desc"></div>
+        <div class="lead" [innerHTML]="desc"></div>
 
         <!-- About the authors -->
-        <p class="footer mt-5">
+        <p class="footer mt-4">
           <u>{{ detailedRequest.organizer.name }}</u>
           <br />
           {{ detailedRequest.organizer.description.text }}
         </p>
         <!-- Eventbrite logo -->
         <p>
-          <img src="/assets/eventbrite.png" width="500" />
+          <img src="assets/eventbrite.png" width="500" />
         </p>
       </div>
     </div>
