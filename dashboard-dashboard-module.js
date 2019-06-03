@@ -58,7 +58,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"row mt-5\">\n    <div class=\"col-12\">\n      <h1>Create an Eventbrite Flyer</h1>\n      <h3 class=\"mt-3\">All Events</h3>\n      <ul>\n        <li *ngFor=\"let event of (request$ | async)?.events\">\n          {{ event.start.utc | date }} - {{ event.name.text }}\n          <a [routerLink]=\"'/event/' + event.id\">View flyer</a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <div class=\"row mt-5\">\n    <div class=\"col-12\">\n      <h1>Create an Eventbrite Flyer</h1>\n      <p>Makes a request to eventbrite.com getting all the events for a specific organizerId. Then displays those events in a list, allowing the user to select an event that is a print friendly flyer.</p>\n      <h3 class=\"mt-3\">All Events</h3>\n      <ul>\n        <li *ngFor=\"let event of (request$ | async)?.events\">\n          {{ event.start.utc | date }} - {{ event.name.text }}\n          <a [routerLink]=\"'/event/' + event.id\">View flyer</a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
