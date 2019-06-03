@@ -1,0 +1,7 @@
+<h1>Create an Eventbrite Flyer</h1>
+<h3>All Events</h3>
+<ul>
+  <li *ngFor="let event of (request$ | async)?.events">
+    {{event.start.utc | date }} - {{event.name.text}} <a [routerLink]="'/event/'+event.id" >View flyer</a>
+  </li>
+</ul>

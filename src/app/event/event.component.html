@@ -1,0 +1,73 @@
+<div *ngIf="detailedRequest" class="container mt-5">
+  <!-- <div class="flex-container">
+    <div class="flex-item">
+      <p>
+        Pellentesque habitant morbi tristique senectus et netus et malesuada
+        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
+        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
+        egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
+        leo.
+      </p>
+    </div>
+    <div class="flex-item">
+      Aside 2
+    </div>
+  </div> -->
+
+  <div class="row">
+    <div class="col-8">
+      <img class="image" src="{{ detailedRequest.logo.original.url }}" />
+    </div>
+    <div class="col-4">
+      <!-- title -->
+      <p class="red bold">{{ detailedRequest.name.text }}</p>
+
+      <!-- When -->
+      <p class="bold">
+        {{ detailedRequest.start.utc | date: "EEEE MMMM dd, yyyy" }}
+        <br />
+        {{ detailedRequest.start.utc | date: "h:mm" }} -
+        {{ detailedRequest.end.utc | date: "h:mm a" }}
+        {{
+          detailedRequest.ticket_availability.minimum_ticket_price.major_value
+            | currency
+        }}
+      </p>
+
+      <!-- Where -->
+      <p class="bold">
+        {{ detailedRequest.venue.name }}
+        <br />
+        {{ detailedRequest.venue.address.localized_address_display }}
+      </p>
+
+      <!-- Callout -->
+      <p class="red bold">Register on Eventbrite!</p>
+    </div>
+    <div class="row mt-5">
+      <div class="col-12">
+        <!-- Description -->
+        <!-- <p>{{detailedRequest.description.text}}</p> -->
+
+        <!-- About the event -->
+        <div [innerHTML]="desc"></div>
+
+        <!-- About the authors -->
+        <p class="footer mt-5">
+          <u>{{ detailedRequest.organizer.name }}</u>
+          <br />
+          {{ detailedRequest.organizer.description.text }}
+        </p>
+        <!-- Eventbrite logo -->
+        <p>
+          <img src="/assets/eventbrite.png" width="500" />
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- <pre>{{ detailedRequest | json}}</pre> -->
+</div>
+<div *ngIf="!detailedRequest">
+  loading...
+</div>

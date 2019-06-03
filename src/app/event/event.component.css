@@ -1,0 +1,44 @@
+.red {
+  color: red;
+}
+.bold {
+  font-weight: bold;
+}
+
+.image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.row, .flex-container {
+  font-size: 28px;
+}
+.footer {
+  font-size: 18px;
+}
+
+/* Some flex */
+/* .flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: flex-start;
+}
+
+.flex-item:nth-child(1) {
+  order: 0;
+  flex: 1 1 auto;
+  align-self: auto;
+  padding: 15px;
+}
+
+.flex-item:nth-child(2) {
+  order: 0;
+  flex: 0 1 380px;
+  align-self: auto;
+  min-width: 380px;
+  max-width: 380px;
+  padding: 15px;
+} */
