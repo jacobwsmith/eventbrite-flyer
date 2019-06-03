@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "npm run build && gh-pages -d dist/eventbrite-flyer -s '{index.html,*.js, *.ico, *.map, *.txt}'"
+    "deploy": "npm run build && gh-pages -d dist/eventbrite-flyer -s '{index.html,*.js, *.ico, *.map, *.txt, *.png}'"
   },
   "private": true,
   "dependencies": {
